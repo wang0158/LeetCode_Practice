@@ -19,10 +19,11 @@ int findMaxConsecutiveOnes(int* nums, int numsSize) {
             temp = 0;
         }
     }
-    if(temp > MAX)
-        {
-            MAX = temp;
-        }    
+    //if(temp > MAX)
+       // {
+         //   MAX = temp;
+       // }    
     //return MAX;
+
     return (temp>MAX)? temp:MAX;
 }
