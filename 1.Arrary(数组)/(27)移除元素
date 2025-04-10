@@ -1,1 +1,50 @@
+//方法1
+int removeElement(int* nums, int numsSize, int val) {
+    int l = 0;
+    int r = numsSize-1;
+    int temp = 0;
+    if (nums == NULL || numsSize == 0)
+    {
+        return 0;
+    }
+    while(l<r)
+    {
+        while(l<r && nums[l]!=val)
+        {
+            l++;
+        }
+        while(l<r && nums[r]==val)
+        {
+            r--;
+        }
+        temp = nums[l];
+        nums[l] = nums[r];
+        nums[r] = temp;
+    }
+    if (nums[l] == val)
+    {
+        return l;
+    }
+    else
+    {
+        return l+1;
+    }
 
+}
+
+//方法2
+
+int removeElement(int* nums, int numsSize, int val) {
+    int index = 0;
+    int count = 0;
+    for (int i=0;i<numsSize;i++)
+    {
+        if (nums[i]!=val)
+        {
+            nums[index] = nums[i];
+            index++;
+            count++;
+        }
+    }
+    return count;
+}
